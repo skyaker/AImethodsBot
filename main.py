@@ -1,11 +1,15 @@
-from transformers import pipeline
-from src.model.model import SentimentModel
+import asyncio
+from src.bot.handlers import register_handlers
+from src.bot.bot import bot, dp
 
-def main():
-  model = SentimentModel()
-  text = "фджлывджфлыажфдылва"
-  sentiment = model.analyze_sentiment(text)
-  print(f"{sentiment}")
+async def main():
+  register_handlers(dp)
+  
+  try:
+    print("Бот запущен...")
+    await dp.start_polling(bot)
+  finally:
+    await bot.session.close()
 
 if __name__ == "__main__":
-  main()
+  asyncio.run(main())

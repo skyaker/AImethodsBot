@@ -1,4 +1,4 @@
 __pycache__
 src/bot/.env
 train_data
-*/.DS_Store
+.DS_Store
