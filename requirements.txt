@@ -1,12 +1,12 @@
-torch 
-torchvision 
-torchaudio
-tensorflow
-tf-keras
-sentencepiece
-transformers
-scipy
-tiktoken
+torch==2.5.1
+torchvision==0.20.1
+torchaudio==2.5.1
+tensorflow==2.18.0
+tf-keras==2.18.0
+sentencepiece==0.2.0
+transformers==4.46.2
+scipy==1.14.1
+tiktoken==0.8.0
 
-python-dotenv
-aiogram
+python-dotenv==1.0.1
+aiogram==3.14.0
