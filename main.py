@@ -1,8 +1,11 @@
 from transformers import pipeline
+from src.model.model import SentimentModel
 
-# Создание пайплайна для анализа тональности с использованием DistilBERT
-sentiment_analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
+def main():
+  model = SentimentModel()
+  text = "фджлывджфлыажфдылва"
+  sentiment = model.analyze_sentiment(text)
+  print(f"{sentiment}")
 
-# Пример использования
-result = sentiment_analyzer("I love this product!")
-print(result)
+if __name__ == "__main__":
+  main()
