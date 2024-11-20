@@ -1,4 +1,7 @@
 __pycache__
 src/bot/.env
-train_data
 .DS_Store
+src/model/data/train_data/big_files
+src/model/data/test_data
+logs/
+sentiment_model/

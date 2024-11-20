@@ -5,4 +5,3 @@ if [[ "$venvAnswer" == "y" || "$venvAnswer" == "Y" ]]; then
 fi
 
 conda init zsh
-exec zsh

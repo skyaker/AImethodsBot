@@ -8,7 +8,7 @@ load_dotenv()
 token: str = os.getenv('BOT_TOKEN')
 
 if not token:
-  raise ValueError("Переменная окружения BOT_TOKEN не задана. Убедитесь, что .env файл в директории src/bot содержит BOT_TOKEN.")
+  raise ValueError("The BOT_TOKEN environment variable is not set. Make sure that the .env file in the src/bot directory contains BOT_TOKEN.")
 
 bot = Bot(token=token)
 storage = MemoryStorage()
