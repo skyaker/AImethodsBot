@@ -1,25 +1,37 @@
 from transformers import pipeline
-from config import MODEL_PATH, USE_GPU
+import os
+import sys
+
+sys.path.append(os.path.dirname(__file__))
+
+from config_loader import load_config
+
+config = load_config()
 
 class SentimentModel:
   def __init__(self):
     """
-    Инициализация модели и токенизатора
+    Model initialization
     """
 
-    if USE_GPU:
+    if config["model"]["use_gpu"]:
       device = 0
     else:
       device = -1
+
+    if config["model"]["use_tuned"]:
+      MODEL_PATH = config["model"]["tuned"]["model_path"]
+    else:
+      MODEL_PATH = config["model"]["pretrained"]["model_path"]
 
     self.pipeline = pipeline("sentiment-analysis", model = MODEL_PATH, tokenizer = MODEL_PATH, device = device)
     
   def analyze_sentiment(self, text: str):
     """
-    Выполняет анализ тональности для заданного текста
+    Analyze sentiment by entered text
 
-    :param test: Входной текст для анализа
-    :return: Результаты анализа
+    :param text: input text
+    :return: result of analyze
     """
 
     result = self.pipeline(text)

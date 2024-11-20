@@ -1,0 +1,17 @@
+[
+  {
+    "text": "I hate this product!", 
+    "id": 1945, 
+    "sentiment": "negative"
+  },
+  {
+    "text": "I love this product!", 
+    "id": 1957, 
+    "sentiment": "positive"
+  },
+  {
+    "text": "It was okay, nothing special.", 
+    "id": 1967, 
+    "sentiment": "positive"
+  }
+]

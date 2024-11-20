@@ -1,0 +1,25 @@
+data:
+  preparsed_data_path: "./data/train_data/preparsed_train_data.json"
+  train_data_path: "./data/train_data/train_data.json"
+
+model:
+  use_gpu: false
+  pretrained:
+    model_path: "cardiffnlp/twitter-xlm-roberta-base-sentiment"
+    tokenizer: "cardiffnlp/twitter-xlm-roberta-base-sentiment"
+  tuned:
+    model_path: "./sentiment_model"
+    tokenizer: "./sentiment_model"
+  use_tuned: true
+
+
+training:
+  eval_strategy: "epoch"
+  save_strategy: "epoch"
+  learning_rate: !!float 2e-5            
+  per_device_train_batch_size: 16
+  per_device_eval_batch_size: 16
+  num_train_epochs: 3              
+  weight_decay: 0.01
+  save_total_limit: 2
+  logging_dir: "./logs"

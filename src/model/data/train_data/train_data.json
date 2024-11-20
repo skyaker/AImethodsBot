@@ -1,0 +1,12 @@
+{
+    "texts": [
+        "I hate this product!",
+        "I love this product!",
+        "It was okay, nothing special."
+    ],
+    "labels": [
+        0,
+        2,
+        2
+    ]
+}
