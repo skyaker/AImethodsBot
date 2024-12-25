@@ -27,7 +27,7 @@ async def start_command(message: types.Message):
 @router.message(Command(commands=["help"]))
 async def help_command(message: types.Message):
   """Command handler /help"""
-  await message.reply("Необходимо отправить текстовое сообщение в чат, после чего я напишу результат анализа")
+  await message.reply("Нажмите на кнопку \"Анализировать текст\" и введите текстовое сообщение в чат, после чего я напишу результат анализа.")
 
 
 @router.message(F.text == "Анализировать текст")

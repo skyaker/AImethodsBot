@@ -2,7 +2,6 @@ __pycache__
 src/bot/.env
 .DS_Store
 src/model/data/train_data/big_files
-src/model/data/test_data
 logs/
 sentiment_model/
 commit.txt

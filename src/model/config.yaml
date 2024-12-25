@@ -1,6 +1,7 @@
 data:
   preparsed_data_path: "./data/train_data/preparsed_train_data.json"
   train_data_path: "./data/train_data/train_data.json"
+  test_data_path: "./data/test_data/test_data.json"
 
 model:
   use_gpu: false
@@ -10,8 +11,11 @@ model:
   tuned:
     model_path: "./sentiment_model"
     tokenizer: "./sentiment_model"
+  ru_model:
+    model_path: "r1char9/rubert-base-cased-russian-sentiment"
+    tokenizer: "r1char9/rubert-base-cased-russian-sentiment"
   use_tuned: false
-
+  use_ru: true
 
 training:
   eval_strategy: "epoch" # Валидация модели после завершения эпохи оубчения

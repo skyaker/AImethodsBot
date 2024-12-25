@@ -22,7 +22,10 @@ class SentimentModel:
     if config["model"]["use_tuned"]:
       MODEL_PATH = config["model"]["tuned"]["model_path"]
     else:
-      MODEL_PATH = config["model"]["pretrained"]["model_path"]
+      if config["model"]["use_ru"]:
+        MODEL_PATH = config["model"]["ru_model"]["model_path"]
+      else:
+        MODEL_PATH = config["model"]["pretrained"]["model_path"]
 
     self.pipeline = pipeline("sentiment-analysis", model = MODEL_PATH, tokenizer = MODEL_PATH, device = device)
     
@@ -31,9 +34,17 @@ class SentimentModel:
     Analyze sentiment by entered text
 
     :param text: input text
-    :return: result of analyze
+    :return: result of analyze with translated labels
     """
 
     result = self.pipeline(text)
+    label_translation = {
+      "positive": "позитивный",
+      "neutral": "нейтральный",
+      "negative": "негативный"
+    }
+
+    for res in result:
+      res["label"] = label_translation.get(res["label"], res["label"])
 
     return result
